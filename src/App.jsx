@@ -9,15 +9,17 @@ function App() {
     { name: "city", urlLink: "https://e0.pxfuel.com/wallpapers/411/354/desktop-wallpaper-raining-city-bg.jpg" },
     { name: "village", urlLink: "https://wallpapercave.com/wp/wp12519966.jpg" }
   ]
-
+  const handleLink = (thislink) => {
+    seturlLink(thislink)
+  }
   return (
     <>
       <div className="w-full h-screen bg-gray-800">
-        <h1 className="text-center text-white font text-xl font-bold">  working</h1>
-        <div className="center-div w-56 p-8 text-white"><img className='w-full object-cover h-44' src={urlLink} alt="" /></div>
+        <h1 className="text-center text-white font text-xl font-bold">working</h1>
+        <div className="center-div w-56 p-8 text-white"><p>selesct to change bg</p><img className='w-full object-cover h-44' src={urlLink} alt="" /></div>
         <div className="fixed flex justify-evenly bottom-14 w-1/2  py-3 rounded-3xl bg-white text-center left-1/4">
           {pictures.map((bglinks) => (
-            <button className='bg-cyan-700 text-white px-5 rounded-full mx-8' key={bglinks.urlLink}>{bglinks.name}</button>
+            <button onClick={() => handleLink(bglinks.urlLink)} className='bg-cyan-700 text-white px-5 rounded-full mx-8' key={bglinks.urlLink}>{bglinks.name}</button>
           ))}
         </div>
       </div>
